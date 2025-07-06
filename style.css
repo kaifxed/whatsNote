@@ -1,0 +1,137 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7f7fa;
+  color: #222;
+}
+.container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  text-align: center;
+}
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+#start-btn {
+  padding: 0.7em 2em;
+  font-size: 1rem;
+  border: none;
+  border-radius: 2em;
+  background: #4f8cff;
+  color: #fff;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: background 0.2s;
+}
+#start-btn:active {
+  background: #3466c2;
+}
+#note-display {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+#current-note {
+  font-weight: bold;
+  color: #4f8cff;
+  font-size: 1.5rem;
+}
+#piano {
+  width: 90vw;
+  max-width: none;
+  margin: 1.5rem auto 1rem auto;
+  user-select: none;
+  height: 200px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  background: #f8f8fa;
+  display: block;
+  position: relative;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.04);
+  border-radius: 0.5rem;
+}
+.piano-white-row {
+  display: flex;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+.piano-black-row {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 60%;
+  width: 100%;
+  pointer-events: none;
+  z-index: 2;
+}
+.piano-key.white {
+  position: relative;
+  width: 40px;
+  min-width: 40px;
+  flex: none;
+  height: 100%;
+  background: #fff;
+  border: 1px solid #bbb;
+  border-radius: 0 0 6px 6px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  z-index: 1;
+  cursor: pointer;
+  transition: background 0.1s, box-shadow 0.1s;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-left: -1px;
+  overflow: visible;
+}
+.piano-key.white.active {
+  background: #4f8cff;
+  color: #fff;
+  box-shadow: 0 0 8px #4f8cff99;
+}
+.piano-key-label {
+  position: absolute;
+  bottom: 8px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #333;
+  pointer-events: none;
+  z-index: 3;
+}
+.piano-key.black {
+  position: absolute;
+  top: 0;
+  /* left is set inline by JS */
+  width: 22px;
+  min-width: 22px;
+  max-width: 22px;
+  height: 100%;
+  background: #222;
+  color: #fff;
+  border: 1px solid #111;
+  border-radius: 0 0 4px 4px;
+  z-index: 10;
+  cursor: pointer;
+  transition: background 0.1s, box-shadow 0.1s;
+  pointer-events: auto;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: visible;
+}
+.piano-key.black.active {
+  background: #4f8cff;
+  color: #fff;
+  box-shadow: 0 0 8px #4f8cff99;
+}
+.black-key-spacer {
+  width: 40px;
+  height: 100%;
+  pointer-events: none;
+}
